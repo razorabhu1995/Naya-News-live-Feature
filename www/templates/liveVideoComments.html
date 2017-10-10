@@ -1,0 +1,31 @@
+
+<ion-modal-view>
+  <ion-header-bar class="bar-positive">
+    <h1 class = "title">Comments</h1>
+    <button class = "button button-clear icon ion-ios-close-outline item-button-right"
+            ng-click = "closeModal()"></button>
+  </ion-header-bar>
+  <ion-content>
+
+    <div ng-repeat="comment in liveVideoCommentsArray track by $index" ng-style="commentblock">
+      <div>{{comment.text}}</div>
+
+      <div align="right" ng-style="time"> <time-ago from-time='{{comment.datetime}}'></time-ago></div>
+      <!--<div align="right">{{comment.datetime | timeAgo}}</div>-->
+    </div>
+
+  </ion-content>
+  <ion-footer-bar class="bar-calm" style="height: 55px !important;" >
+    <div class="row">
+      <div class="col-90">
+        <input type="text"  style="border-radius: 3px; width: 100%; height: 100%; " ng-model="inputData.newliveVideocomment" placeholder="Type Comment Here"> </input>
+      </div>
+      <div class="col-10" align="center" >
+        <button class="button button-icon icon ion-ios-paperplane" ng-click="submitLiveVideoComment()" ></button>
+      </div>
+
+    </div>
+  </ion-footer-bar>
+
+
+</ion-modal-view>

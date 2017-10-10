@@ -1,0 +1,20 @@
+<ion-view view-title="Live Video" >
+  <ion-content>
+    <div class="video-container" ng-controller="videoCtrl" style="position: ; width: 100%;height: 300px;" >
+      <iframe class="youtube-player" type="text/html" width="100%" height="300px" ng-src="{{trustSrc(movie.src)}}" allowfullscreen frameborder="0">
+      </iframe>
+    </div>
+  </ion-content>
+
+  <ion-footer-bar class="bar-calm" style="height: 55px !important;" ng-controller="comment">
+    <div class="row">
+      <div class="col-90">
+        <input type="text"  style="border-radius: 3px; width: 100%; height: 100%; " ng-model="newcomment" placeholder="Type Comment Here"> </input>
+      </div>
+      <div class="col-10" align="center" >
+        <button class="button button-icon icon ion-ios-paperplane" ng-click="submitComment()" ></button>
+
+      </div>
+    </div>
+  </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,50 @@
+<style rel="stylesheet">
+  .selected {
+    background-color: #d1d3d6;
+    font-family: Aharoni;
+  }
+</style>
+<ion-view view-title="{{title}}" >
+  <ion-content>
+    <div class="video-container"  style=" width: 100%;" >
+      <iframe  class="youtube-player" type="text/html" width="100%" height="250px" ng-src="{{srcurl}}" allowfullscreen frameborder="0">
+      </iframe>
+    </div>
+    <ion-scroll scrollbar-x="true">
+      <div class="list">
+        <div class="item item-divider">
+          Other Sources
+        </div>
+
+        <div class="item" ng-repeat="links in otherLinks track by $index" ng-click="accessLinks(links.hashid)" ng-class="{selected: links.hashid === idSelected}" >
+          {{links.title}}
+        </div>
+
+      </div>
+    </ion-scroll>
+  </ion-content>
+
+
+  <ion-footer-bar class="bar-calm" style="height: 55px !important;" >
+    <div class="row">
+      <div class="col-75">
+        <input type="text"  style="border-radius: 3px; width: 100%; height: 100%; " ng-model="inputData.newliveVideocomment" placeholder="Type Comment Here"> </input>
+      </div>
+      <div class="col-11" align="center"  >
+        <button class="button button-icon icon ion-ios-paperplane" ng-click="submitLiveVideoComment();openModal()"></button>
+      </div>
+      <div class="col-11">
+        <!--<button  class="button button-royal text-center" style="border-radius: 100%;" ng-click="openModal(id)">-->
+          <!--{{commentNumber}}-->
+        <!--</button>-->
+      <!--</div>-->
+      <button  class="badge badge-royal" style="border-radius: 100%;" ng-click="openModal()">
+        {{commentNumber}}
+      </button>
+    </div>
+
+
+    </div>
+
+  </ion-footer-bar>
+</ion-view>

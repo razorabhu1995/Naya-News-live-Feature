@@ -1,0 +1,42 @@
+<ion-view  view-title="Comment" ng-controller="comment">
+
+  <ion-content>
+    <!--<ion-refresher-->
+      <!--pulling-text="Pull to refresh..."-->
+      <!--on-refresh="doRefresh()">-->
+    <!--</ion-refresher>-->
+    <div ng-repeat="comment in arrayComments track by $index" ng-style="commentblock">
+      <div>{{comment.text}}</div>
+
+      <div align="right" ng-style="time"> <time-ago from-time='{{comment.datetime}}'></time-ago></div>
+      <!--<div align="right">{{comment.datetime | timeAgo}}</div>-->
+    </div>
+    <div align="center">
+      <img ng-src="{{ImageUrl}}">
+    </div>
+    <div align="center" ng-repeat="img in ImageUrlarr">
+      <img ng-src="{{img}}">
+    </div>
+
+
+  </ion-content>
+
+
+  <ion-footer-bar class="bar-calm" style="height: 55px !important;" >
+    <div class="row">
+      <div class="col-67">
+        <input type="text"  style="border-radius: 3px; width: 100%; height: 100%; " ng-model="newcomment" placeholder="Type Comment Here"> </input>
+      </div>
+      <div class="col-10" align="center" >
+        <button class="button button-icon icon ion-ios-paperplane" ng-click="submitComment()" ></button>
+      </div>
+      <div class="col-10" align="center">
+        <button class="button button-icon icon ion-ios-camera" ng-click="cameraOpen()"></button>
+      </div>
+      <div class="col-11" align="center">
+        <button class="button button-icon icon ion-android-image" ng-click="galleryOpen()"></button>
+      </div>
+    </div>
+  </ion-footer-bar>
+
+</ion-view>

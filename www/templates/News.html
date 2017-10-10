@@ -1,0 +1,32 @@
+<ion-view view-title="News" ng-controller="mynews">
+  <ion-content>
+    <div class="row">
+      <div class="col-50" style="color:grey; border-right: 1px solid black; height: 70px" >
+        <h5>add account ++</h5>
+      </div>
+      <div class="col-50 text-center" style=" color:#0c60ee;height: 70px;">
+
+        <!--<button class="button button-clear button-calm text-center button-full"  >Football</button>-->
+        <!--<button class="button button-clear button-calm text-center button-full"  >Election</button>-->
+        <ul ticker timing="1000" style="padding-top: 12px">
+          <li ng-repeat="liveevent in liveEvents track by $index" ng-click="goLive(liveevent)">
+            <strong>{{liveevent.text}}</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class = "list" >
+      <div class = "item" ng-repeat="news in arrayNews">
+        <h3>{{news.title}}</h3>
+
+        <div>{{news.description}}</div>
+        <div align="right">Comments: {{news.commtNo}}</div>
+        <button class = "button button-block button-calm button-small"  ng-click="gotoComments(news.id)">
+          Comment
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
