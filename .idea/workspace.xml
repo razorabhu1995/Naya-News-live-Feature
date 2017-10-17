@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="600800a8-10b2-4608-8f3b-456376e8752c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/LiveVideoEvents.html" afterPath="$PROJECT_DIR$/www/templates/LiveVideoEvents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/OtherTextSources.html" afterPath="$PROJECT_DIR$/www/templates/OtherTextSources.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,15 +27,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="268" column="34" lean-forward="true" selection-start-line="268" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
+            <state relative-caret-position="219">
+              <caret line="262" column="110" lean-forward="false" selection-start-line="262" selection-start-column="110" selection-end-line="262" selection-end-column="110" />
               <folding>
-                <element signature="e#8910#13812#0" expanded="false" />
-                <element signature="e#12476#12524#0" expanded="false" />
-                <element signature="e#13879#14573#0" expanded="false" />
+                <element signature="e#8912#13814#0" expanded="false" />
+                <element signature="e#12478#12526#0" expanded="false" />
+                <element signature="e#13881#14575#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -65,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="liveEventService.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="liveEventService.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/liveEventService.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -148,10 +148,10 @@
         <option value="$PROJECT_DIR$/www/templates/liveEvent.html" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/www/templates/liveTextComments.html" />
-        <option value="$PROJECT_DIR$/www/js/controllers.js" />
         <option value="$PROJECT_DIR$/www/js/liveEventService.js" />
         <option value="$PROJECT_DIR$/www/templates/OtherTextSources.html" />
         <option value="$PROJECT_DIR$/www/templates/LiveVideoEvents.html" />
+        <option value="$PROJECT_DIR$/www/js/controllers.js" />
       </list>
     </option>
   </component>
@@ -331,12 +331,12 @@
       <workItem from="1508114357786" duration="590000" />
       <workItem from="1508137081128" duration="7153000" />
       <workItem from="1508201173694" duration="3871000" />
-      <workItem from="1508215677958" duration="7467000" />
+      <workItem from="1508215677958" duration="7672000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195863000" />
+    <option name="totallyTimeSpent" value="196068000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -430,9 +430,9 @@
         <state relative-caret-position="3009">
           <caret line="177" column="0" lean-forward="true" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
           <folding>
-            <element signature="e#8910#13812#0" expanded="false" />
-            <element signature="e#12476#12524#0" expanded="false" />
-            <element signature="e#13879#14573#0" expanded="false" />
+            <element signature="e#8912#13814#0" expanded="false" />
+            <element signature="e#12478#12526#0" expanded="false" />
+            <element signature="e#13881#14575#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -506,9 +506,9 @@
         <state relative-caret-position="2975">
           <caret line="175" column="31" lean-forward="false" selection-start-line="175" selection-start-column="31" selection-end-line="175" selection-end-column="31" />
           <folding>
-            <element signature="e#8910#13812#0" expanded="false" />
-            <element signature="e#12476#12524#0" expanded="false" />
-            <element signature="e#13879#14573#0" expanded="false" />
+            <element signature="e#8912#13814#0" expanded="false" />
+            <element signature="e#12478#12526#0" expanded="false" />
+            <element signature="e#13881#14575#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -712,18 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="268" column="34" lean-forward="true" selection-start-line="268" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
-          <folding>
-            <element signature="e#8910#13812#0" expanded="false" />
-            <element signature="e#12476#12524#0" expanded="false" />
-            <element signature="e#13879#14573#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/LiveVideoEvents.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -763,6 +751,18 @@
           <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
           <folding>
             <element signature="e#6167#7269#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="262" column="110" lean-forward="false" selection-start-line="262" selection-start-column="110" selection-end-line="262" selection-end-column="110" />
+          <folding>
+            <element signature="e#8912#13814#0" expanded="false" />
+            <element signature="e#12478#12526#0" expanded="false" />
+            <element signature="e#13881#14575#0" expanded="false" />
           </folding>
         </state>
       </provider>

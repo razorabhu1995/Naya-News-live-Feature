@@ -219,7 +219,7 @@ var app = angular.module('starter.controllers', [])
 
 
         $state.go('app.otherTextSources',{hashid: otherSources.hashid, title: otherSources.title, source: otherSources.linksurl , id: $stateParams.id});
-      }
+      };
 
 
     }])
@@ -260,7 +260,7 @@ var app = angular.module('starter.controllers', [])
     });
 
     $scope.arrayOtherSourceComments = otherTextSourcesService.getTextComments($stateParams.hashid,$stateParams.id);
-    $scope.commentNumber = otherTextSourcesService.getTextCommentsNumber($stateParams.hashid,$stateParams.id)
+    $scope.commentNumber = otherTextSourcesService.getTextCommentsNumber($stateParams.hashid,$stateParams.id);
 
     $scope.submitLiveTextComment = function () {
       console.log('here');
