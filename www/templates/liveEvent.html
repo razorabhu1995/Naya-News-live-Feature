@@ -1,21 +1,42 @@
-<ion-view view-title="{{title}}">
+<style rel="stylesheet">
+  .selected {
+    background-color: #d1d3d6;
+    font-family: Aharoni;
+  }
+  </style>
+
+<ion-view view-title="title">
 
   <ion-content>
     <!--<ion-refresher-->
     <!--pulling-text="Pull to refresh..."-->
     <!--on-refresh="doRefresh()">-->
     <!--</ion-refresher>-->
+    <!--<div style="height: 300px;overflow: auto">-->
+    <ion-scroll scrollbar-x="true" style="height: 300px;">
     <div ng-repeat="comment in liveCommentsArray track by $index" ng-style="commentblock">
       <div>{{comment.text}}</div>
 
       <div align="right" ng-style="time"> <time-ago from-time='{{comment.datetime}}'></time-ago></div>
       <!--<div align="right">{{comment.datetime | timeAgo}}</div>-->
     </div>
+    </ion-scroll>
+    <!--</div>-->
 
+    <!--<div>-->
+    <ion-scroll scrollbar-x="true">
+      <div class="list">
+        <div class="item item-divider">
+          Other Sources
+        </div>
+        <div class="item" ng-repeat="links in otherTextLinks track by $index" ng-click="accessTextLinks(links)" ng-class="{selected: links.hashid === idSelected}" >
+          {{links.title}}
+        </div>
+
+      </div>
+    </ion-scroll>
+    <!--</div>-->
   </ion-content>
-
-
-
 
 
 

@@ -4,24 +4,73 @@ var Events = [
     text: 'Football Live',
     type: 'text',commentNumber:0,
     comments: [],
-    otherSources:[{
+    otherSources:[
+      {
         hashid:1,
         title: 'Annapurna Post',
+        sourceCommentNumber:0,
+        linksurl:"http://kantipur.ekantipur.com/news/2017-10-15/20171015182513.html",
+        sourceComments:[]
+    },
+      {
+        hashid:2,
+        title: 'Himalaya Post',
+        sourceCommentNumber:0,
+        linksurl:"http://kantipur.ekantipur.com/news/2017-10-15/20171015182513.html",
+        sourceComments:[]
+      },
+      {
+        hashid:3,
+        title: 'Setopati Post',
+        sourceCommentNumber:0,
+        linksurl:"http://kantipur.ekantipur.com/news/2017-10-15/20171015182513.html",
+        sourceComments:[]
+      },
+      {
+        hashid:4,
+        title: 'Setopati Post',
+        sourceCommentNumber:0,
+        linksurl:"http://kantipur.ekantipur.com/news/2017-10-15/20171015182513.html",
+        sourceComments:[]
+      },
+      {
+        hashid:5,
+        title: 'Setopati Post',
         linksurl:"asdasdasd",
-        otherComments:[]
-    }]
+        sourceCommentNumber:0,
+
+        sourceComments:[]
+      }
+    ]
   },
 
   {id: 2,
     text: 'Election Live',
     type: 'text',commentNumber:0,
     comments: [],
-    otherSources:[{
+    otherSources:[
+      {
       hashid:1,
       title: 'Annapurna Post',
       linksurl:"asdasdasd",
-      otherComments:[]
-    }]
+        sourceCommentNumber:0,
+        sourceComments:[]
+    },
+      {
+        hashid:2,
+        title: 'Annapurna Post',
+        linksurl:"asdasdasd",
+        sourceCommentNumber:0,
+        sourceComments:[]
+      },
+      {
+        hashid:3,
+        title: 'Annapurna Post',
+        linksurl:"asdasdasd",
+        sourceCommentNumber:0,
+        sourceComments:[]
+      }
+    ]
   },
 
   {id: 3,
@@ -142,7 +191,85 @@ app.factory('liveEventService',function ($q) {
 //
 // })
 
-app.factory('liveTextService',function () {
+app.factory('otherTextSourcesService',function ($q) {
+  return{
+    getTextSourcesLinks :function (id) {
+      for (var i = 0; i < Events.length; i++) {
+        if (id == Events[i].id) {
+          // console.log([i].comments);
+          return Events[i].otherSources;
+        }
+
+      }
+    },
+
+    getTextComments : function(hashid,id){
+      for(var i=0;i<Events.length;i++){
+        if(id==Events[i].id){
+          for(var j=0; j<Events[i].otherSources.length;j++){
+            if(hashid==Events[i].otherSources[j].hashid){
+              return Events[i].otherSources[j].sourceComments;
+            }
+          }
+        }
+      }
+    },
+    getTextCommentsNumber : function(hashid,id){
+      for(var i=0;i<Events.length;i++){
+        if(id==Events[i].id){
+          for(var j=0; j<Events[i].otherSources.length;j++){
+            if(hashid==Events[i].otherSources[j].hashid){
+              return Events[i].otherSources[j].sourceCommentNumber;
+            }
+          }
+        }
+      }
+    },
+    saveLiveTextComment : function (comment, id,hashid) {
+
+      var deferred = $q.defer();
+      var promise = deferred.promise;
+      try {
+        for (var i = 0; i < Events.length; i++) {
+          if (id ==Events[i].id) {
+            for(var j = 0; j<Events[i].otherSources.length;j++) {
+              if(hashid==Events[i].otherSources[j].hashid) {
+                Events[i].otherSources[j].sourceCommentNumber++;
+                Events[i].otherSources[j].sourceComments.push(comment);
+                break;
+              }
+            }
+            break;
+          }
+        }
+        deferred.resolve();
+      } catch (error) {
+        deferred.reject("Failed: " + error);
+      }
+
+
+      promise.success = function (fn) {
+        promise.then(fn);
+        return promise;
+      };
+
+      promise.error = function (fn) {
+        promise.then(null, fn);
+        return promise;
+      };
+
+      return promise;
+
+    }
+
+
+
+
+
+
+
+
+  };
 
 
 });
@@ -202,7 +329,7 @@ app.factory('liveVideoService',function ($q) {
 };
 });
 
-app.factory('otherSourcesService',function ($q) {
+app.factory('otherVideoSourcesService',function ($q) {
   return{
     getSourcesLinks :function (id) {
       for (var i = 0; i < Events.length; i++) {

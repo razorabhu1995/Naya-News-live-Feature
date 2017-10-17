@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers','simpleAngularTicker','yaru22.angular-timeago','ngCordova.plugins.camera','ngCordova.plugins.imagePicker'])
+angular.module('starter', ['ionic', 'starter.controllers','simpleAngularTicker','yaru22.angular-timeago','ngCordova.plugins.camera','ngCordova.plugins.imagePicker','ngYoutubeEmbed'])
 
 .run(function($ionicPlatform,timeAgoSettings) {
   timeAgoSettings.refreshMillis = 1000;
@@ -95,7 +95,7 @@ angular.module('starter', ['ionic', 'starter.controllers','simpleAngularTicker',
       params:{eventDetail:null},
       views:{
         'menuContent': {
-          templateUrl: 'templates/LiveEvent.html',
+          templateUrl: 'templates/liveEvent.html',
           controller: 'liveTextCtrl'
         }
       }
@@ -117,6 +117,26 @@ angular.module('starter', ['ionic', 'starter.controllers','simpleAngularTicker',
         'menuContent': {
           templateUrl: 'templates/liveVideoComments.html',
           controller: 'liveVideoCtrl'
+        }
+      }
+    })
+    .state('app.otherTextSources',{
+      url:'/live/:id/otherTextSources/:hashid',
+      params:{'source':null,'title':null},
+      views:{
+        'menuContent': {
+          templateUrl: 'templates/OtherTextSources.html',
+          controller: 'otherTextSourcesController'
+        }
+      }
+    })
+    .state('app.liveTextComments',{
+      url:'/live/:id/otherTextSources/:hashid',
+      params:{'source':null,'title':null},
+      views:{
+        'menuContent': {
+          templateUrl: 'templates/liveTextComments.html',
+          controller: 'otherTextSourcesController'
         }
       }
     })

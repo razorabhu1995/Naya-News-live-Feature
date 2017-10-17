@@ -61,13 +61,12 @@ var app = angular.module('starter.controllers', [])
         $state.go('app.comments', {id: id});
       };
 
-
       $scope.liveEvents = liveEventService.getEvents();
 
       $scope.goLive = function (event) {
         if (event.type === 'text') {
           console.log(event);
-          $state.go('app.live', {id: event.id, eventDetail: event, type: event.description,});
+          $state.go('app.live', {id: event.id, eventDetail: event, type: event.description});
         } else {
           $state.go('app.liveVideo', {id: event.id, eventDetail: event, type: event.description});
         }
@@ -77,11 +76,9 @@ var app = angular.module('starter.controllers', [])
     }])
 
     .controller('comment', ['$scope', 'newsService', '$stateParams', '$ionicPopup', '$cordovaCamera', '$cordovaImagePicker', function ($scope, newsService, $stateParams, $ionicPopup, $cordovaCamera, $cordovaImagePicker) {
-
       $scope.arrayComments = newsService.getComments($stateParams.id);
 
       console.log($scope.arrayComments);
-
 
       $scope.commentblock = {
         "display": "block",
@@ -99,8 +96,6 @@ var app = angular.module('starter.controllers', [])
             text: $scope.newcomment,
             datetime: date
           };
-
-
           var commenttemp = $scope.newcomment;
 
           newsService.saveComment(newcomment, $stateParams.id)
@@ -120,9 +115,7 @@ var app = angular.module('starter.controllers', [])
         }
       };
 
-
       $scope.cameraOpen = function () {
-
         document.addEventListener("deviceready", function () {
 
           var options = {
@@ -177,7 +170,7 @@ var app = angular.module('starter.controllers', [])
     }])
 
 
-    .controller('liveTextCtrl', ['$scope', '$stateParams', 'liveEventService', function ($scope, $stateParams, liveEventService) {
+    .controller('liveTextCtrl', ['$state','$scope', '$stateParams', 'liveEventService','otherTextSourcesService', function ($state,$scope, $stateParams, liveEventService,otherTextSourcesService) {
 
       if ($stateParams.eventDetail) {
         $scope.title = $stateParams.eventDetail.text;
@@ -220,12 +213,97 @@ var app = angular.module('starter.controllers', [])
           $scope.newlivecomment = '';
         }
       };
+
+      $scope.otherTextLinks = otherTextSourcesService.getTextSourcesLinks($stateParams.id);
+      $scope.accessTextLinks = function (otherSources) {
+
+
+        $state.go('app.otherTextSources',{hashid: otherSources.hashid, title: otherSources.title, source: otherSources.linksurl , id: $stateParams.id});
+      }
+
+
     }])
 
+  .controller('otherTextSourcesController',function ($scope,$stateParams,$sce,$ionicModal,otherTextSourcesService) {
+    $scope.title=$stateParams.title;
+    var Url=$stateParams.source;
+    $scope.url =  $sce.trustAsResourceUrl(Url);
 
-    .controller('liveVideoCtrl', ['$scope', '$stateParams', '$sce', 'liveVideoService', '$ionicModal', 'otherSourcesService',
-      function ($scope, $stateParams, $sce, liveVideoService, $ionicModal, otherSourcesService) {
+    $scope.inputData = {};
+
+    $scope.commentblock = {
+      "display": "block",
+      "background-color": "#42c8f4",
+      "margin": "10px",
+      "padding": "15px",
+      "border-radius": "5px"
+    };
+    $ionicModal.fromTemplateUrl('templates/liveTextComments.html', {
+      scope: $scope,
+      animation: 'slide-in-up',
+    }).then(function (modal) {
+      $scope.modal = modal;
+    });
+
+    $scope.openModal = function () {
+      console.log("here");
+      $scope.modal.show();
+    };
+
+    $scope.closeModal = function () {
+      $scope.modal.hide();
+    };
+
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function () {
+      $scope.modal.remove();
+    });
+
+    $scope.arrayOtherSourceComments = otherTextSourcesService.getTextComments($stateParams.hashid,$stateParams.id);
+    $scope.commentNumber = otherTextSourcesService.getTextCommentsNumber($stateParams.hashid,$stateParams.id)
+
+    $scope.submitLiveTextComment = function () {
+      console.log('here');
+
+      if ($scope.inputData.newliveTextcomment) {
+        var livedate = Date.now();
+        var textComment = {
+          text: $scope.inputData.newliveTextcomment,
+          datetime: livedate
+        };
+        console.log(textComment);
+
+
+        var commentlivetemp = $scope.inputData.newliveTextcomment;
+
+        otherTextSourcesService.saveLiveTextComment(textComment, $stateParams.id, $stateParams.hashid)
+          .success(function () {
+            $scope.commentNumber++;
+          })
+          .error(function (e) {
+
+            $ionicPopup.alert({
+              title: 'error',
+              template: e
+            }).then(function (res) {
+              $scope.inputData.newliveTextcomment = commentlivetemp;
+            });
+          });
+        $scope.inputData.newliveTextcomment = '';
+      }
+    };
+
+
+
+  })
+
+
+  .controller('liveVideoCtrl', ['$scope', '$stateParams', '$sce', 'liveVideoService', '$ionicModal', 'otherVideoSourcesService','ngYoutubeEmbedService',
+      function ($scope, $stateParams, $sce, liveVideoService, $ionicModal, otherVideoSourcesService,ngYoutubeEmbedService) {
         $scope.inputData = {};
+        if ($stateParams.eventDetail) {
+          $scope.title = $stateParams.eventDetail.text;
+        }
 
 
         $ionicModal.fromTemplateUrl('templates/liveVideoComments.html', {
@@ -265,9 +343,6 @@ var app = angular.module('starter.controllers', [])
         // $scope.idSelected (sourceid)
         //$stateParams.id (eventid)
 
-        $scope.check = function () {
-          console.log("jell");
-        };
 
         $scope.submitLiveVideoComment = function () {
           console.log('here');
@@ -283,7 +358,7 @@ var app = angular.module('starter.controllers', [])
 
             var commentlivetemp = $scope.inputData.newliveVideocomment;
 
-            otherSourcesService.saveLiveVideoComment(videoComment, $stateParams.id, $scope.idSelected)
+            otherVideoSourcesService.saveLiveVideoComment(videoComment, $stateParams.id, $scope.idSelected)
               .success(function () {
                 $scope.commentNumber++;
               })
@@ -300,12 +375,14 @@ var app = angular.module('starter.controllers', [])
           }
         };
 
-        $scope.otherLinks = otherSourcesService.getSourcesLinks($stateParams.id);
+        $scope.otherLinks = otherVideoSourcesService.getSourcesLinks($stateParams.id);
         console.log($scope.otherLinks);
+
 
         $scope.trustSrc = function (src) {
           return $sce.trustAsResourceUrl(src);
         };
+
 
         $scope.accessLinks = function (id) {
           for (var i = 0; i < $scope.otherLinks.length; i++) {
@@ -313,17 +390,17 @@ var app = angular.module('starter.controllers', [])
               if ($scope.otherLinks[i].linksurl) {
                 var url = $scope.otherLinks[i].linksurl;
                 var Url = url.split('v=')[1].split('&')[0];
-                var videoUrl = "https://www.youtube.com/embed/".concat(Url)//.concat("?autoplay=1");
+                var videoUrl = "https://www.youtube.com/embed/".concat(Url);//.concat("?autoplay=1");
+                $scope.VideoID=Url;
+                // Gets fired when the state of the iframe player changes
                 $scope.srcurl = $scope.trustSrc(videoUrl);
                 $scope.commentNumber = $scope.otherLinks[i].commentNumber;
                 $scope.liveVideoCommentsArray = $scope.otherLinks[i].comments;
               }
             }
-
           }
           console.log($scope.commentNumber);
           console.log($scope.liveVideoCommentsArray);
-
           // $scope.submitLiveVideoComment = function () {
           //
           //   if ($scope.inputData.newliveVideocomment) {
@@ -354,7 +431,6 @@ var app = angular.module('starter.controllers', [])
           //   }
           // };
           // $scope.srcurl = $scope.trustSrc(videoUrl);
-
           /*if(!$scope.$$phase)
             $scope.$apply();*/
           $scope.idSelected = id;
