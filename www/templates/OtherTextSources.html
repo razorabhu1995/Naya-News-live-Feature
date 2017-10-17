@@ -1,5 +1,5 @@
-<ion-view view-title="{{title}}" >
-  <iframe ng-src="{{url}}" width="100%" height="600"></iframe>
+<ion-view view-title="{{title}}" ng-init="checked=true">
+  <iframe ng-src="{{url}}" width="100%" height="600" ng-if="checked"></iframe>
 
 
 <ion-footer-bar class="bar-calm" style="height: 55px !important;" >

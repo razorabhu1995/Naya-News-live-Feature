@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="600800a8-10b2-4608-8f3b-456376e8752c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/lib/youtube-embed/youtubeEmbed.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/templates/OtherTextSources.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/templates/liveTextComments.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/liveEventService.js" afterPath="$PROJECT_DIR$/www/js/liveEventService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/LiveVideoEvents.html" afterPath="$PROJECT_DIR$/www/templates/LiveVideoEvents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/News.html" afterPath="$PROJECT_DIR$/www/templates/News.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/liveEvent.html" afterPath="$PROJECT_DIR$/www/templates/liveEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/liveVideoComments.html" afterPath="$PROJECT_DIR$/www/templates/liveVideoComments.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/search.html" afterPath="$PROJECT_DIR$/www/templates/search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/OtherTextSources.html" afterPath="$PROJECT_DIR$/www/templates/OtherTextSources.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,7 +30,7 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
+            <state relative-caret-position="202">
               <caret line="268" column="34" lean-forward="true" selection-start-line="268" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
               <folding>
                 <element signature="e#8910#13812#0" expanded="false" />
@@ -56,8 +44,8 @@
       <file leaf-file-name="OtherTextSources.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/OtherTextSources.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="41" lean-forward="true" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+            <state relative-caret-position="17">
+              <caret line="1" column="67" lean-forward="false" selection-start-line="1" selection-start-column="67" selection-end-line="1" selection-end-column="67" />
               <folding>
                 <element signature="n#style#0;n#ion-footer-bar#0;n#ion-view#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#ion-footer-bar#0;n#ion-view#0;n#!!top" expanded="true" />
@@ -80,8 +68,8 @@
       <file leaf-file-name="liveEventService.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/liveEventService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1019">
-              <caret line="69" column="30" lean-forward="false" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+            <state relative-caret-position="135">
+              <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
               <folding>
                 <element signature="e#6167#7269#0" expanded="false" />
               </folding>
@@ -92,8 +80,8 @@
       <file leaf-file-name="LiveVideoEvents.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/LiveVideoEvents.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="10" selection-end-column="19" />
+            <state relative-caret-position="255">
+              <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#ion-footer-bar#0;n#ion-view#0;n#!!top" expanded="true" />
@@ -158,12 +146,12 @@
         <option value="$PROJECT_DIR$/www/templates/search.html" />
         <option value="$PROJECT_DIR$/www/templates/liveVideoComments.html" />
         <option value="$PROJECT_DIR$/www/templates/liveEvent.html" />
-        <option value="$PROJECT_DIR$/www/templates/LiveVideoEvents.html" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/www/templates/liveTextComments.html" />
-        <option value="$PROJECT_DIR$/www/templates/OtherTextSources.html" />
         <option value="$PROJECT_DIR$/www/js/controllers.js" />
         <option value="$PROJECT_DIR$/www/js/liveEventService.js" />
+        <option value="$PROJECT_DIR$/www/templates/OtherTextSources.html" />
+        <option value="$PROJECT_DIR$/www/templates/LiveVideoEvents.html" />
       </list>
     </option>
   </component>
@@ -343,12 +331,12 @@
       <workItem from="1508114357786" duration="590000" />
       <workItem from="1508137081128" duration="7153000" />
       <workItem from="1508201173694" duration="3871000" />
-      <workItem from="1508215677958" duration="5765000" />
+      <workItem from="1508215677958" duration="7467000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194161000" />
+    <option name="totallyTimeSpent" value="195863000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -724,10 +712,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="268" column="34" lean-forward="true" selection-start-line="268" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
+          <folding>
+            <element signature="e#8910#13812#0" expanded="false" />
+            <element signature="e#12476#12524#0" expanded="false" />
+            <element signature="e#13879#14573#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/LiveVideoEvents.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="10" selection-end-column="19" />
+        <state relative-caret-position="255">
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding>
             <element signature="n#style#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#ion-footer-bar#0;n#ion-view#0;n#!!top" expanded="true" />
@@ -739,24 +739,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/OtherTextSources.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="41" lean-forward="true" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+        <state relative-caret-position="17">
+          <caret line="1" column="67" lean-forward="false" selection-start-line="1" selection-start-column="67" selection-end-line="1" selection-end-column="67" />
           <folding>
             <element signature="n#style#0;n#ion-footer-bar#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#ion-footer-bar#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#ion-footer-bar#0;n#ion-view#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="268" column="34" lean-forward="true" selection-start-line="268" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
-          <folding>
-            <element signature="e#8910#13812#0" expanded="false" />
-            <element signature="e#12476#12524#0" expanded="false" />
-            <element signature="e#13879#14573#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -771,8 +759,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/liveEventService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1019">
-          <caret line="69" column="30" lean-forward="false" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+        <state relative-caret-position="135">
+          <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
           <folding>
             <element signature="e#6167#7269#0" expanded="false" />
           </folding>
